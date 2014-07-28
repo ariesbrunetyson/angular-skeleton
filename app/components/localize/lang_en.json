@@ -1,0 +1,21 @@
+{
+  "_AppHeader_": "Angular Skeleton",
+  "_LangEnglish_": "English",
+  "_LangFrench_": "French",
+  "_Home_": "Home",
+  "_About_": "About",
+  "_Footer_": "from the Yeoman team",
+  "_MainTitleHTML5_": "HTML5 Boilerplate",
+  "_MainTitleHTML5Desc_": "HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.",
+  "_MainTitleAngular_": "Angular",
+  "_MainTitleAngularDesc_": "AngularJS is a toolset for building the framework most suited to your application development.",
+  "_MainTitleKarma_": "Karma",
+  "_MainTitleKarmaDesc_": "Spectacular Test Runner for JavaScript.",
+  "_AboutViewSub_": "View submodule: ",
+  "_AboutBase_": "Base",
+  "_AboutViewDesc_": "This is the about main module view. You've visited this module ",
+  "_AboutViewDescTimes_": "time(s)",
+  "_BaseDesc_": "Angular Route Segment library is intended to provide the lacking functionality of nested routing to AngularJS applications. It is widely known, there are no ways to keep the parent state unchanged when children are updated via routing mechanics - the $route service re-creates the whole scope after a route is changed, losing its state completely. route-segment gives you a way to handle this.",
+  "_BaseViewCount_": "Update view count",
+  "_BaseLocalViewCount_": "Local View Count: "
+}

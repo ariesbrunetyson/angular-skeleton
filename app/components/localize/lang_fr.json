@@ -1,0 +1,21 @@
+{
+  "_AppHeader_": "Angular Squelette",
+  "_LangEnglish_": "Anglais",
+  "_LangFrench_": "Français",
+  "_Home_": "Maison",
+  "_About_": "Sur",
+  "_Footer_": "de l'équipe Yeoman",
+  "_MainTitleHTML5_": "HTML5 Boilerplate",
+  "_MainTitleHTML5Desc_": "HTML5 Boilerplate est un modèle frontal professionnel pour la création d'applications ou de sites Web rapides, robustes, et adaptables.",
+  "_MainTitleAngular_": "Angular",
+  "_MainTitleAngularDesc_": "AngularJS est un ensemble d'outils pour la construction du cadre le plus adapté pour le développement de votre application.",
+  "_MainTitleKarma_": "Karma",
+  "_MainTitleKarmaDesc_": "Runner Test spectaculaire pour JavaScript.",
+  "_AboutViewSub_": "Voir sous-module: ",
+  "_AboutBase_": "Base",
+  "_AboutViewDesc_": "C'est le point de vue du module principal sur. Vous avez visité ce module ",
+  "_AboutViewDescTimes_": "temp(s)",
+  "_BaseDesc_": "Angulaire bibliothèque sectorielle Route est destiné à fournir la fonctionnalité de routage manque imbriquée aux applications AngularJS. Il est bien connu, il n'y a pas de moyens de garder l'état d'origine intact lorsque les enfants sont mis à jour par la mécanique de routage - les services de route $ recrée toute l'étendue après un itinéraire est modifié, la perte de son état complètement. itinéraire segments vous donne un moyen de gérer cela.",
+  "_BaseViewCount_": "Mettre à jour vue comptage",
+  "_BaseLocalViewCount_": "Voir comte local: "
+}
