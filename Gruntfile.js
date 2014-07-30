@@ -426,9 +426,8 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-
   //Create Documentation
-  // Argument 'ng' or 'js' is required in order to invoke
+  //Argument either ng or js is required in order to invoke
   grunt.registerTask('docs', function(args){
     switch(args){
         case 'ng':
