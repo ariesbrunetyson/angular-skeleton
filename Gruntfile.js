@@ -359,7 +359,7 @@ module.exports = function (grunt) {
     // Javascript Documentation Settings
     jsdoc: {
       dist: {
-        src:['app/**/*.js'],
+        src:['sample/**/*.js'],
         dest:'doc/js'
       }
     },
@@ -426,7 +426,9 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+
   //Create Documentation
+  // Argument 'ng' or 'js' is required in order to invoke
   grunt.registerTask('docs', function(args){
     switch(args){
         case 'ng':
