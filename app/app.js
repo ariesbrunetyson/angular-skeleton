@@ -27,10 +27,10 @@ var app = angular.module('angularSkeletonApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'route-segment',
-    'view-segment',
+   //'route-segment',
+   //'view-segment',
     'about',
-  'main'
+    'main'
   ]);
 
 // Updating the language on Load
