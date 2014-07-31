@@ -10,28 +10,6 @@ describe('Router: angularSkeletonApp', function () {
     });
     $httpBackend.expectGET('modules/main/main.html').respond(200);
   }));
-  /* Test Cases for Angular Route Segment
-  it('should map routes to controllers', function () {
-	
-    inject(function ($route, $routeSegment, $rootScope, $location) {
-
-      expect($route.current).toBeUndefined();
-      $location.path('/main');
-	  $rootScope.$digest();
-      expect($route.current.segment).toBe('main');
-      expect($route.routes['/main'].segment).toBe('main');
-      expect($route.routes['/main'].originalPath).toBe('/main');
-      
-      expect($route.routes['/about'].segment).toBe('about');
-      expect($route.routes['/about'].originalPath).toBe('/about');
-      
-      expect($route.routes['/about/base'].segment).toBe('about.base');
-      
-      // otherwise redirect to
-      expect($route.routes[null].redirectTo).toEqual('/main')
-    });
-  });
-  */
   it('should map routes to controllers', function () {
 	
     inject(function ($route, $rootScope, $location) {
