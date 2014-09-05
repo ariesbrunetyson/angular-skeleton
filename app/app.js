@@ -27,8 +27,6 @@ var app = angular.module('angularSkeletonApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'route-segment',
-    'view-segment',
     'about',
   'main'
   ]);
