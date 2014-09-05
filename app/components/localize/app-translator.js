@@ -45,7 +45,7 @@ app.service('translationService', [
     var getTranslation = function (language) {
       var translationDeferred = $q.defer();
       language = language || 'en_US';
-      var path = '/components/localize/lang_' + language + '.json';
+      var path = 'components/localize/lang_' + language + '.json';
       var ssid = 'lang_' + language;
       if (sessionStorage) {
         if (sessionStorage.getItem(ssid)) {
