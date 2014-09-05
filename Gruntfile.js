@@ -326,6 +326,23 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      linkLib:{
+      	files:[{
+      		expand: true, 
+      		src: ['bower_components/angular/angular.js',
+      			'bower_components/json3/lib/json3.js',
+	      		'bower_components/angular-resource/angular-resource.js',
+    	  		'bower_components/angular-cookies/angular-cookies.js',
+      			'bower_components/angular-sanitize/angular-sanitize.js',
+      			'bower_components/angular-animate/angular-animate.js',
+	      		'bower_components/angular-touch/angular-touch.js',
+    	  		'bower_components/angular-route/angular-route.js'
+      			], 
+	      	dest: 'app/lib/',
+	      	flatten:true
+	      }
+      	]
       }
     },
 

@@ -7,24 +7,18 @@
  * Router configuration of the application. All the routings are done using the route segment component of Angular.
  * Ref : http://angular-route-segment.com/
  */
-app.config(function ($routeSegmentProvider, $routeProvider) {
+app.config(function ($routeProvider) {
   'use strict';
-  $routeSegmentProvider.when('/main', 'main').
-  when('/about', 'about').
-  when('/about/base', 'about.base').
-  segment('main', {
+  $routeProvider.when('/main', {
     templateUrl: 'modules/main/main.html',
     controller: 'MainCtrl'
-  }).
-  segment('about', {
+  }).when('/about', {
     templateUrl: 'modules/about/about.html',
     controller: 'AboutCtrl'
-  }).
-  within().segment('base', {
+  }).when('/about/base', {
     templateUrl: 'modules/about/base/base.html',
     controller: 'BaseCtrl',
-  });
-  $routeProvider.otherwise({
+  }).otherwise({
     redirectTo: '/main'
   });
 });

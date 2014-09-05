@@ -1,5 +1,5 @@
 'use strict';
-describe('Router: angularSkeletonApp', function () {
+/*describe('Router: angularSkeletonApp', function () {
   
   var $httpBackend;
   beforeEach(module('angularSkeletonApp'));
@@ -31,3 +31,4 @@ describe('Router: angularSkeletonApp', function () {
     });
   });
 });
+*/
