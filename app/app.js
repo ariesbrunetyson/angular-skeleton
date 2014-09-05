@@ -34,8 +34,11 @@ var app = angular.module('angularSkeletonApp', [
   ]);
 
 // Updating the language on Load
-app.run(function (translationService) {
-  translationService.getTranslation('en');
+app.run(function (translationService,$rootScope) {
+  translationService.getTranslation('en').then(function(){
+     //angular.bootstrap(document, ['angularSkeletonApp']);
+     $rootScope.langLoaded = true;
+  });;
 });
 
 // Handle app level change
