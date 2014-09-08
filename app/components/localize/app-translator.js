@@ -10,8 +10,9 @@
  */
 app.service('translationService', [
   '$resource',
-  '$rootScope',
-  function ($resource, $rootScope) {
+  '$rootScope', 
+  '$q',
+  function ($resource, $rootScope,$q) {
     /**
      * @ngdoc function 
      * @name angularSkeletonApp.translationService#getTranslation
@@ -42,23 +43,28 @@ app.service('translationService', [
      *
      */
     var getTranslation = function (language) {
+      var translationDeferred = $q.defer();
       language = language || 'en_US';
       var path = '/components/localize/lang_' + language + '.json';
       var ssid = 'lang_' + language;
       if (sessionStorage) {
         if (sessionStorage.getItem(ssid)) {
           $rootScope.translation = JSON.parse(sessionStorage.getItem(ssid));
+          translationDeferred.resolve();
         } else {
           $resource(path).get(function (data) {
             $rootScope.translation = data;
             sessionStorage.setItem(ssid, JSON.stringify($rootScope.translation));
+            translationDeferred.resolve();
           });
         }
       } else {
         $resource(path).get(function (data) {
           $rootScope.translation = data;
+          translationDeferred.resolve();
         });
       }
+      return translationDeferred.promise;
     };
     return {
       getTranslation: getTranslation

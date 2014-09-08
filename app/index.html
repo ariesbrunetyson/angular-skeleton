@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{translation._AppHeader_}}</title>
+  <title>{{translation._AppHeader_|| 'Appname'}}</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,34 +20,37 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <div id="appContainer" ng-show="langLoaded">
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div class="header" ng-controller="AppCtrl">
+        <ul class="lang float-right">
+          <li>
+            <a ng-click="updateLocale('en')" href="">{{translation._LangEnglish_}}</a>
+          </li>
+          <li><a ng-click="updateLocale('fr')" href="">{{translation._LangFrench_}}</a>
+          </li>
+        </ul>
+        <h3 class="text-muted">{{translation._AppHeader_}}</h3>
+        <ul class="nav">
+          <li class="active"><a ng-href="#/main">{{translation._Home_}}</a>
+          </li>
+          <li><a ng-href="#/about">{{translation._About_}}</a>
+          </li>
+        </ul>
+      </div>
 
-  <!-- Add your site or application content here -->
-  <div class="container">
-    <div class="header" ng-controller="AppCtrl">
-      <ul class="lang float-right">
-        <li>
-          <a ng-click="updateLocale('en')" href="">{{translation._LangEnglish_}}</a>
-        </li>
-        <li><a ng-click="updateLocale('fr')" href="">{{translation._LangFrench_}}</a>
-        </li>
-      </ul>
-      <h3 class="text-muted">{{translation._AppHeader_}}</h3>
-      <ul class="nav">
-        <li class="active"><a ng-href="#/main">{{translation._Home_}}</a>
-        </li>
-        <li><a ng-href="#/about">{{translation._About_}}</a>
-        </li>
-      </ul>
-    </div>
 
+      <div app-view-segment="0"></div>
 
-    <div app-view-segment="0"></div>
-
-    <div class="footer">
-      <p><span class="glyphicon glyphicon-heart"></span>{{translation._Footer_}}</p>
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span>{{translation._Footer_}}</p>
+      </div>
     </div>
   </div>
-
+  <div ng-hide="langLoaded" class="tempLoader">
+			Loading...
+  </div>
   <!-- build:js(.) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>

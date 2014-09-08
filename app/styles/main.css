@@ -25,6 +25,12 @@ body {
 }
 /* Custom page header */
 
+.tempLoader{
+	height: 50%;
+	width: 100%;
+	padding-top: 50%;
+	text-align: center;
+}
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
