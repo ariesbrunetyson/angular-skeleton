@@ -12,7 +12,7 @@
     <property name="sonar.projectKey" value="angularSkeleton" />
     <property name="sonar.projectName" value="AngularWeb" />
     <property name="sonar.projectVersion" value="1.0" />
-    <property name="sonar.language" value="javascript" />
+    <property name="sonar.language" value="js" />
     <property name="sonar.projectDescription" value="AngularSkeletonApplication" />
     <property name="sonar.sources" value="app" />
     
