@@ -1,0 +1,16 @@
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.hide {
+  display: none !important;
+}
+.show{
+  display: block !important;
+}
+.clear{
+  clear: both !important;
+}

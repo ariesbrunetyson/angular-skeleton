@@ -28,12 +28,15 @@ var app = angular.module('angularSkeletonApp', [
     'ngSanitize',
     'ngTouch',
     'about',
-  'main'
+  	'main'
   ]);
 
 // Updating the language on Load
-app.run(function (translationService,$rootScope) {
-  translationService.getTranslation('en').then(function(){
+app.run(function (translationService,$rootScope,config) {
+  document.querySelector('body').setAttribute('class', config.theme);
+  $rootScope.config = config;
+  $rootScope.currentTheme = config.theme;
+  translationService.getTranslation(config.language).then(function(){
      //angular.bootstrap(document, ['angularSkeletonApp']);
      $rootScope.langLoaded = true;
   });;

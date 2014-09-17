@@ -12,6 +12,7 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
@@ -20,34 +21,7 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <div id="appContainer" ng-show="langLoaded">
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header" ng-controller="AppCtrl">
-        <ul class="lang float-right">
-          <li>
-            <a ng-click="updateLocale('en')" href="">{{translation._LangEnglish_}}</a>
-          </li>
-          <li><a ng-click="updateLocale('fr')" href="">{{translation._LangFrench_}}</a>
-          </li>
-        </ul>
-        <h3 class="text-muted">{{translation._AppHeader_}}</h3>
-        <ul class="nav">
-          <li class="active"><a ng-href="#/main">{{translation._Home_}}</a>
-          </li>
-          <li><a ng-href="#/about">{{translation._About_}}</a>
-          </li>
-        </ul>
-      </div>
-
-
-      <div ng-view></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span>{{translation._Footer_}}</p>
-      </div>
-    </div>
-  </div>
+ 
   <div ng-hide="langLoaded" class="tempLoader">
 			Loading...
   </div>
@@ -60,20 +34,22 @@
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="lib/angular.js"></script>
-  <script src="lib/json3.js"></script>
-  <script src="lib/angular-resource.js"></script>
-  <script src="lib/angular-cookies.js"></script>
-  <script src="lib/angular-sanitize.js"></script>
-  <script src="lib/angular-animate.js"></script>
-  <script src="lib/angular-touch.js"></script>
-  <script src="lib/angular-route.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/json3/lib/json3.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-route-segment/build/angular-route-segment.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="app.js"></script>
   <script src="router.js"></script>
+  <script src="config.js"></script>
   <script src="modules/about/about-controller.js "></script>
   <script src="modules/about/base/base-controller.js "></script>
   <script src="modules/main/main-controller.js "></script>
@@ -85,6 +61,36 @@
   <script src="components/services/app-service.js"></script>
   <script src="components/services/base-service.js"></script>
   <!-- endbuild -->
+   <div id="appContainer" ng-controller="AppCtrl" class="hide" ng-class="{show:langLoaded, hide: !langLoaded}">
+    <!-- Add your site or application content here -->
+      <div id="header" class="hide">
+        <ul class="lang float-right">
+          <li>
+            <a ng-click="updateLocale('en')" href="">{{translation._LangEnglish_}}</a>
+          </li>
+          <li><a ng-click="updateLocale('fr')" href="">{{translation._LangFrench_}}</a>
+          </li>
+        </ul>
+        
+        <h3>{{translation._AppHeader_}}</h3>
+       
+      </div>
+	
+	   <div id="navContainer">
+	   	 <a class="app-logo" ng-href="#/home" title="{{translation[config[currentTheme].logo_alt]}}"></a>
+         <ul class="nav">
+           <li class="active"><a ng-href="#/main">{{translation._Home_}}</a>
+           </li>
+           <li><a ng-href="#/about">{{translation._About_}}</a>
+           </li>
+         </ul>
+       </div>
+      <div ng-view id="contentContainer"></div>
+
+      <div id="footer" class="clear hide">
+        <p>{{translation._Footer_}}</p>
+      </div>
+  </div>
 </body>
 
 </html>
