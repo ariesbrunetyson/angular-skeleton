@@ -33,7 +33,6 @@ var app = angular.module('angularSkeletonApp', [
 
 // Updating the language on Load
 app.run(function (translationService,$rootScope,config) {
-  document.querySelector('body').setAttribute('class', config.theme);
   $rootScope.config = config;
   $rootScope.currentTheme = config.theme;
   translationService.getTranslation(config.language).then(function(){
