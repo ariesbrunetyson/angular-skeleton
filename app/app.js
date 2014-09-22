@@ -32,9 +32,13 @@ var app = angular.module('angularSkeletonApp', [
   ]);
 
 // Updating the language on Load
-app.run(function (translationService,$rootScope,config) {
+app.run(function (translationService,$rootScope,config,access,$location) {
   $rootScope.config = config;
   $rootScope.currentTheme = config.theme;
+  $rootScope.$on("$routeChangeStart", function(event, next, current) {
+    if(!access.isUrlAccessibleForUser(next.originalPath))
+    	$location.path('/main');
+  });
   translationService.getTranslation(config.language).then(function(){
      //angular.bootstrap(document, ['angularSkeletonApp']);
      $rootScope.langLoaded = true;
